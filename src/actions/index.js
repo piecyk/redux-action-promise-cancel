@@ -33,13 +33,10 @@ export const fetchQuery = (query) => {
       payload => {
         dispatch({type: FETCH_QUERY_FULFILLED, payload});
       }, error => {
-        if (error.message === PromiseCancelled) {
-          dispatch(
-            error.message === PromiseCancelled ?
-            {type: FETCH_QUERY_CANCELED} :
-            {type: FETCH_QUERY_REJECTED, payload: error}
-          );
-        }
+        dispatch(error.message === PromiseCancelled ?
+          {type: FETCH_QUERY_CANCELED} :
+          {type: FETCH_QUERY_REJECTED, payload: error}
+        );
       }
     );
     return deffer;
