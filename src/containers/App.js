@@ -57,7 +57,7 @@ class App extends Component {
       this.setState({isPending: true});
     }
     if (this.deffer) {
-      this.deffer.cancel(new Error('Promise cancelled'));
+      this.deffer.cancel();
       this.deffer = null;
     }
     this.debounceFetchQuery(value);
