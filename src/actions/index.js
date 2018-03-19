@@ -27,7 +27,6 @@ export const FETCH_QUERY_FULFILLED = 'FETCH_QUERY_FULFILLED';
 export const fetchQuery = (query) => {
   return dispatch => {
     dispatch({type: FETCH_QUERY_PENDING});
-
     const deffer = defferCancel(fQuery(query));
     deffer.then(
       payload => {

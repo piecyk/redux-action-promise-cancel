@@ -3,7 +3,7 @@ import {createLogger} from 'redux-logger'
 import promiseMiddleware from "redux-promise-middleware";
 import thunk from "redux-thunk";
 
-import reducer from "./reducers";
+import reducer from "reducers";
 
 const configureStore = (state = {}) => {
   return createStore(

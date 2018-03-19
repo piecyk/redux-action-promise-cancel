@@ -4,10 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --mode development"
+    "start": "webpack-dev-server --progress --mode development --plugin html-webpack-plugin"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

@@ -1,4 +1,4 @@
-import {UPDATE_QUERY} from './../actions';
+import {UPDATE_QUERY, FETCH_QUERY_FULFILLED} from 'actions';
 
 export default function (state, action) {
   switch (action.type) {
@@ -8,7 +8,7 @@ export default function (state, action) {
         query: action.query
       }
     }
-    case 'FETCH_QUERY_FULFILLED': {
+    case FETCH_QUERY_FULFILLED: {
       return {
         ...state,
         resolvedData: action.payload

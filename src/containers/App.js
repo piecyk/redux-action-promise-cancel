@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {updateQuery, fetchQuery} from './../actions';
+import {updateQuery, fetchQuery} from 'actions';
 
 import debounce from 'lodash.debounce';
 
