@@ -1,20 +1,20 @@
 import {UPDATE_QUERY, FETCH_QUERY_FULFILLED} from 'actions';
 
-export default function (state, action) {
+export default function(state, action) {
   switch (action.type) {
     case UPDATE_QUERY: {
       return {
         ...state,
-        query: action.query
-      }
+        query: action.query,
+      };
     }
     case FETCH_QUERY_FULFILLED: {
       return {
         ...state,
-        resolvedData: action.payload
-      }
+        resolvedData: action.payload,
+      };
     }
     default:
-      return state
+      return state;
   }
 }

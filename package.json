@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --mode development --plugin html-webpack-plugin"
+    "start": "webpack-dev-server --progress --mode development --plugin html-webpack-plugin",
+    "build": "webpack --bail --progress --mode production --plugin html-webpack-plugin",
+    "prettier": "./node_modules/.bin/prettier --ignore-path ./.gitignore --write '**/*.+(js)'"
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -22,8 +25,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^3.0.7",
+    "prettier": "1.11.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": false
   }
 }

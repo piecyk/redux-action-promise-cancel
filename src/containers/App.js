@@ -13,8 +13,8 @@ class App extends Component {
     this.debounceFetchQuery = debounce(this.onFetchQuery, 200);
     // not everything need to be on redux store
     this.state = {
-      isPending: false
-    }
+      isPending: false,
+    };
   }
   render() {
     const {query, resolvedData} = this.props;
@@ -24,30 +24,29 @@ class App extends Component {
         <h2>Test:</h2>
         <div style={{padding: 10}}>
           query:
-          <input
-            type={'text'}
-            value={query}
-            onChange={this.onChange}
-          />
+          <input type={'text'} value={query} onChange={this.onChange} />
         </div>
         <div style={{padding: 15, fontSize: 18}}>
-          {isPending ?
+          {isPending ? (
             <div>loading...</div>
-            :
+          ) : (
             resolvedData && <div>resolvedData: {resolvedData}</div>
-          }
+          )}
         </div>
       </div>
-    )
+    );
   }
   onFetchQuery(query) {
     this.deffer = this.props.dispatch(fetchQuery(query));
-    this.deffer.then(() => {
-      this.setState({isPending: false});
-      this.deffer = null
-    }, () => {
-      this.deffer = null
-    })
+    this.deffer.then(
+      () => {
+        this.setState({isPending: false});
+        this.deffer = null;
+      },
+      () => {
+        this.deffer = null;
+      }
+    );
   }
   onChange(e) {
     const {value} = e.target;
@@ -64,4 +63,4 @@ class App extends Component {
   }
 }
 
-export default connect(s => s)(App)
+export default connect(s => s)(App);
